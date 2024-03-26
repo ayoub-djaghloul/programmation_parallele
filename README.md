@@ -12,34 +12,42 @@ Les commandes suivantes sont utilisées pour compiler les programmes associés �
 ### Algorithme séquentiel
 ```bash
 g++ main1.cpp -Wall -o main.o
+```
 
-Algorithme avec threads
+### Algorithme avec threads
 ```bash
 g++ -std=c++11 -pthread main_thread.cpp -o main_thread
+```
 
-Algorithme avec ThreadPool
+### Algorithme avec ThreadPool
 ```bash
 g++ -std=c++11 -pthread main_threadpool.cpp -o main_threadpool
+```
 
-Exécution des programmes
+## Exécution des programmes
 Une fois compilés, les programmes peuvent être exécutés comme suit pour tester le solver sur un plateau de jeu 6x6.
 
-Avec l'algorithme de thread
+### Avec l'algorithme de thread
 ```bash
 ./main_thread 6x6_colorv2.txt
+```
 
-Avec l'algorithme séquentiel
+### Avec l'algorithme séquentiel
 ```bash
 ./main 6x6_colorv2.txt
+```
 
-Description des Implémentations
-Algorithme Séquentiel: Suit une approche classique de backtracking, explorant l'espace de solutions de manière linéaire.
-Algorithme avec Threads: Utilise std::thread pour exécuter le backtracking en parallèle sur plusieurs threads.
-Algorithme avec ThreadPool: Optimise le traitement parallèle en réutilisant les threads pour différentes tâches de backtracking, réduisant ainsi l'overhead de gestion des threads.
+## Description des Implémentations
+### Algorithme Séquentiel:
+Suit une approche classique de backtracking, explorant l'espace de solutions de manière linéaire.
+### Algorithme avec Threads:
+Utilise std::thread pour exécuter le backtracking en parallèle sur plusieurs threads.
+### Algorithme avec ThreadPool:
+Optimise le traitement parallèle en réutilisant les threads pour différentes tâches de backtracking, réduisant ainsi l'overhead de gestion des threads.
 
-Résultats de Performances :
+## Résultats de Performances :
 Les tests montrent que les implémentations parallèles surpassent significativement l'algorithme séquentiel, surtout pour les plateaux de taille moyenne et grande, démontrant l'efficacité du parallélisme dans la réduction du temps de calcul.
 
-Conclusion :
+## Conclusion :
 
 Les approches parallèles de résolution du jeu de MacMahon présentent des améliorations significatives en termes de performances comparées à l'approche séquentielle, soulignant l'importance de l'exploitation du parallélisme dans la résolution de problèmes combinatoires complexes.
